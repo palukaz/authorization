@@ -60,11 +60,11 @@ p{
 .input:focus:-ms-input-placeholder {
     color: transparent
 }
-#submit{
+button{
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 30px;
 }
-#submit:hover{
+button:hover{
     transition: background-color .2s;
     background-color: darkslategray;
     color: whitesmoke;
