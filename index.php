@@ -23,13 +23,12 @@ checkGuest();
     <?php if (hasError('pass')): ?>
         <small><?php echo getError('pass');?></small>
     <?php endif;?>
-    <br><input class="checkbox" type="checkbox" name="remember"> Запомнить меня</input>
+    <!--<br><input class="checkbox" type="checkbox" name="remember"> Запомнить меня</input>-->
     <button id="submit" type="submit" class="input button">Войти</button>
 </form>
     <?php clearValidation(); ?>
     <hr>
     <label> У меня нет <a href="registration.php">аккаунта</a></label>
 </div>
-</form>
 </body>
 </html>
