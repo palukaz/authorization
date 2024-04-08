@@ -63,3 +63,14 @@ function checkGuest() : void
 {
     if(isset($_SESSION['user']['id']) || isset($_COOKIE['auth'])) redirect('menu.php');
 }
+function uploadFile(array $file) : string
+{
+    $uploadPath = __DIR__.'/uploads';
+    if(!is_dir($uploadPath)){
+        mkdir($uploadPath,0777,true);
+    }
+    $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+    $fileName = 'avatar_'.time().'.'.$ext;
+    if(!move_uploaded_file($file['tmp_name'], "$uploadPath/$fileName")) die('Ошибка при загрузке файла на сервер');
+    return $fileName;
+}

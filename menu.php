@@ -16,13 +16,13 @@ $user = currentUser();
 <div class="container">
     <p class="meet">Здравствуйте, <?php echo $user['name']?></p><br>
 
-    <form action="actions/update.php" method="post">
+    <form action="actions/update.php" method="post" enctype="multipart/form-data">
+        <img class="avatar" src="<?php echo $user['avatar']?>" alt="avatar"><br><hr>
+        <label>Изменить аватарку: </label>
+        <input type="file" class="input file" name="avatar" id="avatar">
         <label>Введите новое имя: </label>
         <input type="text" class="input" name="user_input_name" placeholder="Новое имя">
-        <?php if (hasError('name')): ?>
-            <small><?php echo getError('name'); ?></small>
-        <?php endif; ?>
-        <button type="submit" class="input button">Изменить имя</button>
+        <button type="submit" class="input button">Сохранить изменения</button>
     </form>
     <hr>
     <form action="actions/logout.php" method="post">
