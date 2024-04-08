@@ -18,6 +18,10 @@ $user = currentUser();
     <form action="actions/logout.php" method="post">
     <button id="submit" type="submit" class="input button">Выйти из аккаунта</button>
     </form>
+    <hr>
+    <form action="actions/delete.php" method="post">
+    <button id="delete_user" type="submit" class="input button">Удалить аккаунт</button>
+    </form>
 </div>
 
 </body>
