@@ -19,6 +19,9 @@ $user = currentUser();
     <form action="actions/update.php" method="post">
         <label>Введите новое имя: </label>
         <input type="text" class="input" name="user_input_name" placeholder="Новое имя">
+        <?php if (hasError('name')): ?>
+            <small><?php echo getError('name'); ?></small>
+        <?php endif; ?>
         <button type="submit" class="input button">Изменить имя</button>
     </form>
     <hr>
@@ -29,6 +32,6 @@ $user = currentUser();
     <button id="delete_user" type="submit" class="input button">Удалить аккаунт</button>
     </form>
 </div>
-
+<?php clearValidation(); ?>
 </body>
 </html>
