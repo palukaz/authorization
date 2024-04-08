@@ -20,8 +20,11 @@ $user = currentUser();
         <img class="avatar" src="<?php echo $user['avatar']?>" alt="avatar"><br><hr>
         <label>Изменить аватарку: </label>
         <input type="file" class="input file" name="avatar" id="avatar">
+        <?php if (hasError('avatar')): ?>
+            <small><?php echo getError('avatar'); ?></small>
+        <?php endif; ?>
         <label>Введите новое имя: </label>
-        <input type="text" class="input" name="user_input_name" placeholder="Новое имя">
+        <input type="text" class="input" name="user_input_name" placeholder="Новое имя" value=<?php echo getOldValue('name') ?>>
         <button type="submit" class="input button">Сохранить изменения</button>
     </form>
     <hr>
