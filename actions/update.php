@@ -19,11 +19,11 @@ if(!empty($newAvatar)){
     $_SESSION['values']['name'] = $newName;
     $types = ['image/jpeg', 'image/png'];
     if(!in_array($newAvatar['type'],$types)){
-        addError('avatar','Файл имеет неверный тип');
+        if(empty($newName))addError('avatar','Файл имеет неверный тип');
         redirect('../menu.php');
     }
     if($newAvatar['size']/1000000>10){
-        addError('avatar','Файл слишком большой');
+        if(empty($newName))addError('avatar','Файл слишком большой');
         redirect('../menu.php');
     }
     $query = 'UPDATE `users` SET `avatar` = :avatar WHERE id=:id';
