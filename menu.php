@@ -36,5 +36,6 @@ $user = currentUser();
     </form>
 </div>
 <?php clearValidation(); ?>
+<script src="main.js"></script>
 </body>
 </html>
